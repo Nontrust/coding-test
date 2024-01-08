@@ -1,9 +1,12 @@
 from collections import deque
 def solution(nums):
-    answer = list(set(nums))
-    answer.reverse()
+    answer = deque()
+    answer.append(nums[0])
+    for i in range(1, len(nums)):
+        if nums[i-1] != nums[i]:
+            answer.appendleft(nums[i])
 
-    return answer
+    return list(answer)
     
    
 print(solution([0, 1, 1, 1, 2, 2, 2, 3]))

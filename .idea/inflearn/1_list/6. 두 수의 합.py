@@ -1,9 +1,12 @@
 def solution(nums, target):
-    answer = [0,0]
+    for i in range(len(nums)-1):
+        for j in range(i+1, len(nums)):
+            if nums[i]+nums[j] == target:
+               return sorted([nums[i], nums[j]])
+    return [0,0]
 
 
-    return answer
-        
+
                                        
 print(solution([7, 9, 2, 13, 3, 15, 8, 11], 12))
 print(solution([21, 12, 30, 15, 6, 2, 9, 19, 14], 24))
