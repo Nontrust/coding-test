@@ -1,7 +1,12 @@
 def solution(nums):
+    dat = [0]*10000
     answer = -1
-    
-       
+    for num in nums:
+        dat[num] += 1
+    for i in range(len(dat)):
+        if dat[i] == 1 and answer < i :
+            answer = i
+
     return answer
                             
                 
