@@ -1,11 +1,15 @@
 def solution(nums):
-    dat = [0]*10000
+    dat = [0]*1001
     answer = -1
     for num in nums:
         dat[num] += 1
-    for i in range(len(dat)):
-        if dat[i] == 1 and answer < i :
-            answer = i
+    # for i in range(len(dat)):
+    #     if dat[i] == 1 and answer < i :
+    #         answer = i
+
+    for i in range(len(dat)-1, 0, -1):
+        if dat[i]==1:
+            return i
 
     return answer
                             

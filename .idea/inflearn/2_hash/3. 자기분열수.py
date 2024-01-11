@@ -1,10 +1,25 @@
-from collections import Counter
-def solution(nums):
+from collections import Counter, defaultdict
+def solution2(nums):
     answer = 0
-    
+    num_counter = Counter(nums)
+    for num in num_counter:
+        if num == num_counter[num]:
+            return num
 
-    return answer 
-                          
+    return -1
+
+def solution(nums):
+    nums_dict = defaultdict(int)
+    for num in nums:
+         nums_dict[num] += 1
+    print(nums_dict)
+
+    for n in nums_dict:
+        if nums_dict[n] == n:
+            return n
+    return -1
+
+
 print(solution([1, 2, 3, 1, 3, 3, 2, 4]))
 print(solution([1, 2, 3, 3, 3, 2, 4, 5, 5, 5]))
 print(solution([1, 1, 2, 5, 5, 5, 5, 5, 3, 3, 3, 3, 5]))
