@@ -1,10 +1,15 @@
 from collections import defaultdict
 def solution(nums, target):
     answer = [0]*2
-   
-        
+    target_dict = defaultdict(bool)
+    for x in nums:
+        y = target - x
+        if y in target_dict:
+            return sorted([x,y])
+        else:
+            target_dict[x] = True
     return answer
-    
+
                             
                 
 print(solution([3, 7, 2, 12, 9, 15, 8], 12))

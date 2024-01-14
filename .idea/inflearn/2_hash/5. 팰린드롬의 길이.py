@@ -1,7 +1,13 @@
 from collections import Counter
 def solution(s):
-    answer = 0
-
+    answer = len(s)
+    has_odd_val = False
+    cnt = Counter(s)
+    for key in cnt:
+        if cnt[key]%2 == 1 :
+            if not has_odd_val:
+                has_odd_val = True
+            else: answer-= 1
     return answer
     
                    
