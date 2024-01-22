@@ -9,11 +9,8 @@ def solution(n, moves):
     for s in moves:
         tx = x + control[s][0]
         ty = y + control[s][1]
-        if tx in range(6) and ty in range(6):
-            x=tx
-            y=ty
-
-
+        if tx in range(n) and ty in range(n):
+            x, y=tx, ty
     return [x, y]
                 
                       
