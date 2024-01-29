@@ -1,8 +1,13 @@
 def solution(nums):
-    answer = 0
-    
-            
-    return answer
+    answer, temp = 0, 0
+    n = len(nums)
+    nums.sort()
+    for num in nums:
+        if temp<num:
+            answer+=1
+            temp = num
+
+    return answer//2 if answer > n/2 else answer
     
                        
 print(solution([2, 1, 1, 3, 2, 3, 1, 2]))

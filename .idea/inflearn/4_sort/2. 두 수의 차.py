@@ -1,6 +1,15 @@
 def solution(nums):
     answer = []
-   
+    min = 999999
+    nums.sort()
+    for i in range(1, len(nums)):
+        t = nums[i] - nums[i-1]
+        if min == t:
+            answer.append([nums[i-1], nums[i]])
+        elif min > t:
+            answer = [[nums[i-1], nums[i]]]
+            min = t
+
                 
     return answer
 
