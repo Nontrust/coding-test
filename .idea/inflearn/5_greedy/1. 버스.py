@@ -1,7 +1,11 @@
+from collections import deque
 def solution(weight, limit):
     answer = 0
-    
-        
+    for w in sorted(weight):
+        limit -= w
+        if limit <= 0:
+            return answer
+        answer += 1
     return answer
                                            
 print(solution([300, 100, 230, 120, 90, 150, 60], 700))
