@@ -1,7 +1,14 @@
 def solution(box, limit):
     answer = 0
-    
-    
+    box.sort(key = lambda b:-b[1])
+    for b in box:
+        while b[0] > 0:
+            answer += b[1]
+            b[0] -= 1
+            limit -= 1
+            if limit <= 0:
+                return answer
+
     return answer
     
                                            
