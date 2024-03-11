@@ -1,6 +1,20 @@
+from collections import deque
+
 def solution(nums, k):
     answer = 0
-    
+    n = len(nums)
+
+    for i in range(k):
+        answer += nums[n-1-i]
+        print
+    temp = answer
+    start = n-k
+
+    for j in range(k):
+        temp += nums[j]
+        temp -= nums[start+j]
+
+        answer = max(answer, temp)
 
     return answer
         

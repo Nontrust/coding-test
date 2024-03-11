@@ -1,7 +1,14 @@
 def solution(m, nums):
-    answer = 0
-   
-            
+    answer, lt, rt, i, n= 0, 0, 0, 0, len(nums)
+    nums.sort(key = lambda a: (a[0], -a[1]))
+    while i < n:
+        while i < n and nums[i][0] <= lt:
+            rt = max(rt, nums[i][1])
+            i+=1
+        answer+=1
+        if rt == m:
+            return answer
+        lt = rt
     return answer
     
                                            
