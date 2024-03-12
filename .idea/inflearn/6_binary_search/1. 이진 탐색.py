@@ -1,8 +1,15 @@
 def solution(nums, target):
-    answer = 0
-    
+    lt, rt = 0, len(nums)-1
+    while lt<=rt:
+        mid = (lt+rt)//2
+        if nums[mid]==target:
+            return nums[mid]
+        elif nums[mid]>target:
+            rt=mid-1
+        elif nums[mid]<target:
+            lt=mid+1
 
-    return answer
+    return -1
                                                  
 print(solution([2, 5, 7, 8, 10, 15, 20, 24, 25, 30], 8))
 print(solution([-3, 0, 2, 5, 8, 9, 12, 15], 0))

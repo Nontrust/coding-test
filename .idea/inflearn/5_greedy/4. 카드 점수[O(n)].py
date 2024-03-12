@@ -1,5 +1,3 @@
-from collections import deque
-
 def solution(nums, k):
     answer = 0
     n = len(nums)
