@@ -1,7 +1,15 @@
+from collections import deque
 def solution(nums):
-    answer = 0
-    
-    
+    answer, i = 0, 0
+    stack = []
+    for x in nums:
+        if x==1 and len(stack) >= 2 and stack[-1] == 2 and stack[-2]==1:
+            answer = answer+1
+            stack.pop()
+            stack.pop()
+        else:
+            stack.append(x)
+
     return answer
     
 

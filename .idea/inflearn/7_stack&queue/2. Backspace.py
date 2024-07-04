@@ -1,8 +1,13 @@
+from collections import deque
 def solution(s):
     answer = ""
-
-    
-    return answer
+    queue = deque()
+    for j in s:
+        if(j == "#"):
+            queue.pop()
+        else:
+            queue.append(j)
+    return "".join(queue)
             
           
 print(solution("abc##ec#ab"))
