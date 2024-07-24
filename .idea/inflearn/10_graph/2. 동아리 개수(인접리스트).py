@@ -1,7 +1,25 @@
 def solution(n, edges):
+    check = [False] * (n+1)
+    graph = [[] for _ in range(n+1)]
+
+    for [a, b] in edges:
+        graph[a].append(b)
+        graph[b].append(a)
     answer = 0
-    
+
+    for i in range(1, n+1):
+        if not check[i]:
+            answer += 1
+            dfs(i, graph, check, n)
+
     return answer
+
+def dfs(node, graph, check, n):
+    check[node] = True
+    for n in graph[node]:
+        if not check[n]:
+            dfs(n, graph, check, n)
+
                     
 
 
